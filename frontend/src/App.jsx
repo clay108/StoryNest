@@ -24,8 +24,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      if (isAuthenticated) {
-        try {
+      try {
+         // if (isAuthenticated) {
           const { data } = await axios.get(
             `${import.meta.env.VITE_BACKEND_URI}/api/v1/user/myprofile`,
             {
@@ -34,26 +34,33 @@ const App = () => {
           );
           setUser(data.user);
           setIsAuthenticated(true);
+        //}
         } catch (error) {
           console.log(error);
           setIsAuthenticated(false);
           setUser({});
         }
-      };
+      
     };
       const fetchBlogs = async () => {
         try {
+          //if(isAuthenticated){
           const { data } = await axios.get(
             `${import.meta.env.VITE_BACKEND_URI}/api/v1/blog/all`,
             { withCredentials: true }
           );
           setBlogs(data.allBlogs);
+      // }
         } catch (error) {
           setBlogs([]);
         }
+      
       };
-      fetchUser();
-      fetchBlogs();
+      //if(isAuthenticated){
+
+        fetchUser();
+        fetchBlogs();
+      //}
     
   }, [isAuthenticated, user]);
   return (
