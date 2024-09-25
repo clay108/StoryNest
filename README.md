@@ -47,10 +47,10 @@ A full-stack blogging platform where users can create, update, delete, and view 
 ```
 ### ScreenShots
 -1.DashBoard
-![Dashboard](https://github.com/clay108/BlogApp/blob/main/dashboard.png)
+![Dashboard](https://github.com/clay108/BlogSphere/blob/main/dashboard.png)
 -2.Home Page
-![Home](https://github.com/clay108/BlogApp/blob/main/Home%20page.png)
+![Home](https://github.com/clay108/BlogSphere/blob/main/Home%20page.png)
 -3.Upload Post
-![Upload](https://github.com/clay108/BlogApp/blob/main/upload%20post.png)
+![Upload](https://github.com/clay108/BlogSphere/blob/main/upload%20post.png)
 
 
