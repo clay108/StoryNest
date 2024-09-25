@@ -62,7 +62,7 @@ const App = () => {
         fetchBlogs();
       //}
     
-  }, [isAuthenticated, user]);
+  }, []);
   return (
     <>
       <BrowserRouter>
