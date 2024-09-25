@@ -1,16 +1,16 @@
 {
-    "version":2,
-    "name":"BlogSphere",
-    "builds":[
+    "version": 2,
+    "name": "BlogSphere",
+    "builds": [
         {
-            "src":"./server.js",
-            "use":"@vercel/node"
+            "src": "app.js",
+            "use": "@vercel/node"
         }
     ],
-    "routes":[
+    "routes": [
         {
-            "src":"/(.*)",
-            "dest":"/"
+            "src": "/api/(.*)",
+            "dest": "/app.js"
         }
     ]
 }
