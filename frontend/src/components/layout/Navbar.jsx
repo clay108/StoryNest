@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Context } from "../../main";
@@ -7,20 +8,19 @@ import { CiLight } from "react-icons/ci";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
 
   const handleNavbar = () => {
     setShow(!show);
   };
-
+  
   const isDashboard = useLocation(`${import.meta.env.VITE_BACKEND_URI}/dashboard`);
-
-  const { mode, setMode, isAuthenticated, user, setIsAuthenticated } =
-    useContext(Context);
-
+  
+  const { mode, setMode, isAuthenticated, user, setIsAuthenticated } = useContext(Context);
+  
   const navigateTo = useNavigate();
-
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
@@ -88,7 +88,7 @@ const Navbar = () => {
                 <MdDarkMode className="dark-icon" />
               )}
             </button>
-            {isAuthenticated  && user.role === "Author" ? (
+            {isAuthenticated && user.role === "Author" ? (
               <Link
                 to={"/dashboard"}
                 onClick={handleNavbar}
