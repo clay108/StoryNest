@@ -8,15 +8,13 @@ import { CiLight } from "react-icons/ci";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-
 const Navbar = () => {
   const [show, setShow] = useState(false);
-
   const handleNavbar = () => {
     setShow(!show);
   };
   
-  const isDashboard = useLocation(`${import.meta.env.VITE_BACKEND_URI}/dashboard`);
+  const isDashboard = useLocation("http://localhost:5173/dashboard");
   
   const { mode, setMode, isAuthenticated, user, setIsAuthenticated } = useContext(Context);
   
@@ -25,7 +23,7 @@ const Navbar = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URI}/api/v1/user/logout`,
+        "http://localhost:4000/api/v1/user/logout",
         { withCredentials: true }
       );
       setIsAuthenticated(false);
@@ -48,14 +46,13 @@ const Navbar = () => {
     >
       <nav>
         <div className="logo">
-          Story<span>Nest</span>
+          Zeta<span>Blog</span>
         </div>
         <div className={show ? "links show" : "links"}>
           <ul>
             <li>
               <Link to={"/"} onClick={handleNavbar}>
                 HOME
-                {user.name}
               </Link>
             </li>
             <li>
@@ -89,7 +86,7 @@ const Navbar = () => {
                 <MdDarkMode className="dark-icon" />
               )}
             </button>
-            {isAuthenticated && user && user.role === "Author" ? (
+            {isAuthenticated && user.role === "Author" ? (
               <Link
                 to={"/dashboard"}
                 onClick={handleNavbar}
