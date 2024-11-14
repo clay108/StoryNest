@@ -16,7 +16,7 @@ const Navbar = () => {
     setShow(!show);
   };
   
-  const isDashboard = useLocation("http://localhost:5173/dashboard");
+  const isDashboard = useLocation(`${import.meta.env.VITE_BACKEND_URI}/dashboard`);
   
   const { mode, setMode, isAuthenticated, user, setIsAuthenticated } = useContext(Context);
   
@@ -55,6 +55,7 @@ const Navbar = () => {
             <li>
               <Link to={"/"} onClick={handleNavbar}>
                 HOME
+                {user.name}
               </Link>
             </li>
             <li>
