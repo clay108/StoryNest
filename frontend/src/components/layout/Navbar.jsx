@@ -46,7 +46,7 @@ const Navbar = () => {
     >
       <nav>
         <div className="logo">
-          Zeta<span>Blog</span>
+          Story<span>Nest</span>
         </div>
         <div className={show ? "links show" : "links"}>
           <ul>
