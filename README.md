@@ -1,6 +1,6 @@
 # StoryNest
 
-A full-stack blogging platform where users can create, update, delete, and view blog posts with images and text using the MERN (MongoDB, Express, React, Node.js) stack. This project enables users to publish blogs with images, view other users' blogs, and manage their own posts.
+A full-stack blogging platform where users can create, update, delete, and view blog posts with images and text using the MERN (MongoDB, Express, React, Node.js) stack. This project has Author and Reader, Author can publish blogs with images, view other users' blogs, and manage their own posts and reader can read the blogs.
 
 ## Features
 - **User Authentication**: Users can register and log in to create and manage their blog posts.
